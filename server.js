@@ -18,7 +18,7 @@ app.set("view engine", "handlebars");
 
 // var routes = require("./controllers/catsController.js");
 app.get("/", function(req, res){
-    connection.query("SELECT * FROM cats", function(err, data){
+    connection.query("SELECT * FROM burgers", function(err, data){
         if(err){
             return res.status(500).send("An error occured")
         }

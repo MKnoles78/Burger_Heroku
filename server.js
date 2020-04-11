@@ -4,6 +4,8 @@ var PORT = process.env.PORT || 8080;
 
 var app = express();
 
+const connection = require("./config/connection");
+
 app.use(express.static("public"));
 
 app.use(express.urlencoded({ extended: true }));
@@ -16,7 +18,13 @@ app.set("view engine", "handlebars");
 
 // var routes = require("./controllers/catsController.js");
 app.get("/", function(req, res){
-    res.render("index");
+    connection.query("SELECT * FROM cats", function(err, data){
+        if(err){
+            return res.status(500).send("An error occured")
+        }
+        res.render("index", { cats: data });
+    })
+    
 })
 // app.use(routes);
 

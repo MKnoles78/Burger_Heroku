@@ -5,7 +5,7 @@ $(function() {
     var newDevour = $(this).data("newdevour");
 
     var newDevourState = {
-      devour: newDevour
+      devour: true
     };
 
     // Send the PUT request.
@@ -14,8 +14,6 @@ $(function() {
       data: newDevourState
     }).then(
       function() {
-        console.log("changed devour to", newDevour);
-        // Reload the page to get the updated list
         location.reload();
       }
     );
@@ -25,8 +23,7 @@ $(function() {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
-    var newBurger = {
-      name: $("#ca").val().trim(),
+    var newBurger = $("[name=burger_name]").val().trim(),
       devour: $("[name=devour]:checked").val().trim()
     };
 
@@ -56,5 +53,4 @@ $(function() {
         location.reload();
       }
     );
-  });
 });

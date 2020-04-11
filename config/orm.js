@@ -87,11 +87,11 @@ var orm = {
       cb(result);
     });
   },
-  delete: function(table, name, cb) {
+  delete: function(table, burger_name, cb) {
     var queryString = "DELETE FROM " + table;
 
     queryString += " WHERE ";
-    queryString += name;
+    queryString += burger_name;
 
     console.log(queryString);
     connection.query(queryString, function(err, result) {

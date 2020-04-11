@@ -15,35 +15,30 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/burgers", function(req, res) {
-  burger.create([
-    "burger_name", "devour"
-  ], [
-    req.body.burger_name, req.body.devour
-  ], function(result) {
+  burger.create([req.body.name], function(result) {
     res.json({ id: result.insertId });
   });
 });
-router.delete("/api/burgers", function(req, res) {
-  burger.create([
-    "burger_name"
-  ], [
-    req.body.burger_name
-  ], function(result) {
-    res.json({ id: result.insertId });
+router.delete("/api/burgers/:id", function(req, res) {
+ var condition = "id = " + req.params.id;
+ burger.delete(condition, function(result){
+   if (result.affectedRows == 0) {
+     return res.status(404).end();
+   }else {
+     res.status.end()
+   }
   });
 });
 
 router.put("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
-  console.log("condition", condition);
+  // console.log("condition", condition);
 
-  burger.update({
-    devour: req.body.devour
-  }, condition, function(result) {
-    if (result.changedRows == 0) {
+  burger.update(req.body, condition, function(result){
+    if (result.changedRows == 0){
       return res.status(404).end();
-    } else {
+    }else {
       res.status(200).end();
     }
   });

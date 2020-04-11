@@ -22,7 +22,7 @@ app.get("/", function(req, res){
         if(err){
             return res.status(500).send("An error occured")
         }
-        res.render("index", { cats: data });
+        res.render("index", { burgers: data });
     })
     
 })

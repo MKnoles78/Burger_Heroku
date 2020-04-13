@@ -38,8 +38,8 @@ var orm = {
       cb(result);
     });
   },
-  allOrder: function (table, orderCol, cb){
-    var queryString = "SELECT * FROM " + table + " ORDER BY " + orderCol + " DESC";
+  allOrder: function (tableInput, orderCol, cb){
+    var queryString = "SELECT * FROM " + tableInput + " ORDER BY " + orderCol + " DESC";
 
     connection.query(queryString, function(err, result){
       if (err) {

@@ -1,10 +1,10 @@
 var express = require("express");
 
-var PORT = process.env.PORT || 3306;
+var PORT = process.env.PORT || 8080;
 
 var app = express();
 
-// const connection = require("./config/connection");
+const connection = require("./config/connection");
 
 app.use(express.static("public"));
 
@@ -17,9 +17,9 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // var routes = require("./controllers/catsController.js");
-var routes = require("./controllers/burgers_controllers.js");
+var routes = require("./controllers/burgersControllers.js");
 
-app.use("/", routes);
+app.use(routes);
 
 
 app.listen(PORT, function() {

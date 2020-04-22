@@ -38,16 +38,16 @@ var orm = {
       cb(result);
     });
   },
-  allOrder: function (tableInput, orderCol, cb){
-    var queryString = "SELECT * FROM " + tableInput + " ORDER BY " + orderCol + " DESC";
+  // allOrder: function (tableInput, orderCol, cb){
+  //   var queryString = "SELECT * FROM " + tableInput + " ORDER BY " + orderCol + " DESC";
 
-    connection.query(queryString, function(err, result){
-      if (err) {
-        throw err;
-      }
-      cb(result);
-    })
-  },
+  //   connection.query(queryString, function(err, result){
+  //     if (err) {
+  //       throw err;
+  //     }
+  //     cb(result);
+  //   })
+  // },
   create: function(table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
 

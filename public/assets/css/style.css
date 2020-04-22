@@ -6,8 +6,15 @@ li {
   
   .label {
     font-weight: bold;
+    justify-content: center;
+    display: inline-block;
+		text-align: right;
   }
   
+  #burger-name {
+    color: purple;
+    font-size: x-large;
+  }
   .create-update-form {
     padding: 5px;
     margin: 5px;
@@ -18,3 +25,55 @@ li {
     margin-bottom: 5px;
   }
   
+  .column {
+    float: left;
+  }
+  
+  .left, .right {
+    width: 25%;
+  }
+  
+  .middle {
+    width: 50%;
+  }
+
+  #burger {
+    width: 300px;
+    height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  #welcome {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: purple;
+  }
+  body {
+    background-color: orange;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+  }
+  h2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: purple;
+
+  }
+
+  #createbgr {
+    width: 750px;  
+  }
+
+  button {
+    background-color: purple;
+    color: white;
+  }

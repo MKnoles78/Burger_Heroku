@@ -19,16 +19,7 @@ router.post("/api/burgers", function(req, res) {
     res.json({ id: result.insertId });
   });
 });
-router.delete("/api/burgers/:id", function(req, res) {
- var condition = "id = " + req.params.id;
- burger.delete(condition, function(result){
-   if (result.affectedRows == 0) {
-     return res.status(404).end();
-   }else {
-     res.status.end()
-   }
-  });
-});
+
 
 router.put("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
@@ -43,5 +34,16 @@ router.put("/api/burgers/:id", function(req, res) {
     }
   });
 });
+
+router.delete("/api/burgers/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
+  burger.delete(condition, function(result){
+    if (result.affectedRows == 0) {
+      return res.status(404).end();
+    }else {
+      res.status.end()
+    }
+   });
+ });
 
 module.exports = router;

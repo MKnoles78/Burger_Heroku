@@ -4,7 +4,7 @@ var PORT = process.env.PORT || 8080;
 
 var app = express();
 
-const connection = require("./config/connection");
+// const connection = require("./config/connection");
 
 app.use(express.static("public"));
 

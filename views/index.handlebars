@@ -1,42 +1,51 @@
+
+<container id="welcome">
 <img src="/assets/img/hamburger.png" id="burger"><br>
-
-
-<h1 id="welcome">Welcome to Heroku Burger Bar</h1><br>
-
+<h1>Welcome to Heroku Burger Bar</h1><br>
+</container>
 <h2>Place Order Here</h2>
-<form class="create-form">
-  <div class="form-group">
-    <label for="ca" id="burger-name">Burger Name:</label>
-    <input type="text" id="ca" name="name">
-</div>
-<button type="submit">Add burger</button>
-</form><br>
 
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Burger Name:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="sleepy">Sleepy?</label><br>
+    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
+    <input type="radio" name="sleepy" value="0"> Awake
+  </div>
+  <button type="submit">Add Cat</button>
+</form>
+
+<h1>Burgers!</h1>
 <div class="container">
   <div class="row">
-    <div class="col-sm">
-     <ul>
-      {{#each burgers}}
+    <div class="col-md">
+    <h3>Burgers Ordered!</h3>
+    <ul>
+      {{#each cats}}
         {{#unless sleepy}}
-          {{> burgers/burger-block sleep=true}}
+          {{> cats/cat-block sleep=true}}
         {{/unless}}
       {{/each}}
     </ul>
-    </div>
+    </div><br>
     <div class="col-sm">
-    </div>
-    <div class="col-sm">
-      <ul>
-        {{#each burgers}}
-          {{#if sleepy}}
-            {{> burgers/burger-block sleep=false}}
-          {{/if}}
-        {{/each}}
-      </ul>
+      
+    </div><br>
+    <div class="col-md">
+    <h3>Burgers you ate!</h3>
+    <ul>
+      {{#each cats}}
+        {{#if sleepy}}
+          {{> cats/cat-block sleep=false}}
+        {{/if}}
+      {{/each}}
+    </ul>
     </div>
   </div>
 </div>
-
-
-
 

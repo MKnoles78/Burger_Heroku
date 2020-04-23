@@ -1,4 +1,4 @@
-li {
+/* li {
     padding: 5px;
     margin: 5px;
     background: #faebd7;
@@ -37,14 +37,6 @@ li {
     width: 50%;
   }
 
-  #burger {
-    width: 300px;
-    height: 300px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
   #welcome {
     display: block;
     margin-left: auto;
@@ -58,7 +50,6 @@ li {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-
   }
   h2 {
     display: block;
@@ -75,5 +66,51 @@ li {
 
   button {
     background-color: purple;
-    color: white;
+    color: white; */
+  }
+
+  li {
+    padding: 5px;
+    margin: 5px;
+    background: #faebd7;
+  }
+  
+  .label {
+    font-weight: bold;
+  }
+  
+  .create-update-form {
+    padding: 5px;
+    margin: 5px;
+    background: aqua;
+  }
+  
+  .form-group {
+    margin-bottom: 5px;
+  }
+  #burger {
+    width: 250px;
+    height: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  #ca {
+    width: 750px;  
+  }
+
+  #welcome {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: purple;
+  }
+  body {
+    background-color: orange;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
   }

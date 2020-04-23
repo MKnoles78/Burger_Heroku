@@ -24,10 +24,10 @@
   $(".create-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-
+    console.log("you clicked me")
     var newCat = {
       name: $("#ca").val().trim(),
-      sleepy: $("[name=sleepy]:checked").val().trim()
+      // sleepy: $("[name=sleepy]:checked").val().trim()
     };
 
     // Send the POST request.

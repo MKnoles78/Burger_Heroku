@@ -13,9 +13,9 @@
   </div>
 
   <div class="form-group">
-    <label for="sleepy">Hungry?</label><br>
-    {{!-- <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake --}}
+    <label for="hungry">Hungry?</label><br>
+    {{!-- <input type="radio" name="hungry" value="1" checked> hungry!<br>
+    <input type="radio" name="hungry" value="0"> Awake --}}
   </div>
   <button type="submit">Order Burger</button>
 </form>
@@ -26,9 +26,9 @@
     <div class="col-sm-5">
     <h3>Burgers Ordered!</h3>
     <ul>
-      {{#each cats}}
-        {{#unless sleepy}}
-          {{> cats/cat-block sleep=true}}
+      {{#each burgers}}
+        {{#unless hungry}}
+          {{> burgers/burger-block eat=true}}
         {{/unless}}
       {{/each}}
     </ul>
@@ -39,9 +39,9 @@
     <div class="col-sm-5">
     <h3>Burgers you ate!</h3>
     <ul>
-      {{#each cats}}
-        {{#if sleepy}}
-          {{> cats/cat-block sleep=false}}
+      {{#each burgers}}
+        {{#if hungry}}
+          {{> burgers/burger-block eat=false}}
         {{/if}}
       {{/each}}
     </ul>
